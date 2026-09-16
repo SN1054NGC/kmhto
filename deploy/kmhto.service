@@ -1,0 +1,21 @@
+[Unit]
+Description=KMHTO collaboration server (ТО/КМХ)
+After=network.target
+
+[Service]
+Type=simple
+# Поменяйте на свой каталог и пользователя
+WorkingDirectory=/var/www/kmhto
+User=www-data
+Group=www-data
+Environment=KMHTO_HOST=127.0.0.1
+Environment=KMHTO_PORT=8787
+Environment=KMHTO_DATA=/var/www/kmhto/data
+ExecStart=/usr/bin/node server/index.js
+Restart=always
+RestartSec=3
+StandardOutput=append:/var/www/kmhto/logs/kmhto.log
+StandardError=append:/var/www/kmhto/logs/kmhto.log
+
+[Install]
+WantedBy=multi-user.target

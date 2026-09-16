@@ -1,0 +1,20 @@
+# KMHTO на Node.js через Passenger (Jino).
+# Панель задаёт app_root и startup_file=app.js, поэтому в корне сайта лежит app.js,
+# который просто запускает server/index.js.
+PassengerEnabled on
+PassengerAppRoot /home/users/j/j17637313/domains/kmhto.ru
+PassengerAppType node
+PassengerStartupFile app.js
+SetEnv KMHTO_HOST 127.0.0.1
+SetEnv KMHTO_DATA /home/users/j/j17637313/domains/kmhto.ru/data
+
+# ВАЖНО: прокси срезает hop-by-hop заголовки Upgrade/Connection, и тогда
+# WebSocket не поднимается (запрос приходит как обычный GET). Возвращаем их,
+# но ТОЛЬКО для /ws: если добавить их ко всем запросам, Node будет считать
+# апгрейдом вообще каждый запрос и отвечать 400 (нет Sec-WebSocket-Key).
+SetEnvIf Request_URI "^/ws" kmhto_ws
+
+<IfModule mod_headers.c>
+    RequestHeader set Upgrade "websocket" env=kmhto_ws
+    RequestHeader set Connection "Upgrade" env=kmhto_ws
+</IfModule>

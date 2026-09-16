@@ -1,0 +1,11 @@
+# Вариант без PassengerNodejs: Passenger берёт свой Node по умолчанию
+PassengerEnabled on
+PassengerAppRoot /home/users/j/j17637313/domains/kmhto.ru
+PassengerAppType node
+PassengerStartupFile server/index.js
+PassengerBaseURI /
+PassengerAppEnv development
+PassengerFriendlyErrorPages on
+
+SetEnv KMHTO_HOST 127.0.0.1
+SetEnv KMHTO_DATA /home/users/j/j17637313/domains/kmhto.ru/data

@@ -1,0 +1,5 @@
+# Вариант B: только приложение, статично (без сервера совместной работы)
+# Excel, календарь, планирование работают; совместная работа и Аршин — нет.
+# Кладётся в ~/domains/kmhto.ru/.htaccess (или в public_html, если docroot там).
+PassengerEnabled off
+DirectoryIndex app_kmhto.html index.html

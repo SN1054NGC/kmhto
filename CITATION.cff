@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "Если используете KMHTO в работе или публикации, укажите автора и ссылку на репозиторий."
+title: "KMHTO — учёт и планирование ТО/КМХ метрологического оборудования"
+abstract: "Веб-приложение и сервер совместной работы для учёта, планирования и контроля технического обслуживания (ТО) и метрологических работ (КМХ) средств измерений."
+authors:
+  - family-names: "Логвиненко"
+    given-names: "А. А."
+    alias: "SN1054NGC"
+    email: "logvinenko-aa@mail.ru"
+license: AGPL-3.0-or-later
+repository-code: "https://github.com/SN1054NGC/kmhto"
+version: 1.0.0
+date-released: 2026-09-16
+keywords:
+  - "ТО"
+  - "КМХ"
+  - "метрология"
+  - "планирование"

@@ -1,0 +1,7 @@
+# Единый стиль переводов строк (проект проверяет CRLF в app_kmhto.html)
+* text=auto
+*.html text eol=crlf
+*.js text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+*.sh text eol=lf
